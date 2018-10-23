@@ -85,7 +85,7 @@ public class EspressoTests {
 
             // uiController.loopMainThreadForAtLeast(500);   Throwing unknown error.
 
-            Thread.sleep(2000); //Adding it as application was not able to sync in time.
+            Thread.sleep(5000); //Adding it as application was not able to sync in time.
 
             onView(withId(R.id.textSearch)).check(matches(isDisplayed()));
 
