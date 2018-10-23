@@ -8,6 +8,11 @@ jobs:
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
+      - Setting permissions
+         run:
+           name: Setting permissions
+           command: git update-index --chmod=+x gradlew
+           command: bash ./gradlew compileDebug --stacktrace
       - checkout
       - run:
           name: Setup Android Emulator
@@ -25,9 +30,6 @@ jobs:
             sleep 30
             adb shell input keyevent 82
       - run:
-          name: Add Permissions
-          command: chmod +x gradlew
-          
           name: Run EspressoTests
           command: ./gradlew connectedAndroidTest
           
