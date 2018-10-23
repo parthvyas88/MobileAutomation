@@ -9,8 +9,8 @@ jobs:
       JVM_OPTS: -Xmx3200m
     steps:
       - checkout
-      - run
-          name: Give permission
+      - run:
+          name: permission
           command: sudo chmod +x gradlew
           command: sudo chmod 777 ~/app
       - run:
