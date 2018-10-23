@@ -11,7 +11,9 @@ jobs:
       - checkout
       - run:
           name: permission
-          command: sudo chmod +x gradlew
+          command: sudo chmod +x gradlew          
+      - run:
+          name: Global Permissions
           command: sudo chmod 777 ~/app
       - run:
           name: Setup Android Emulator
