@@ -26,7 +26,9 @@ jobs:
             adb shell input keyevent 82
       - run:
           name: Run EspressoTests
-          command: ./gradlew connectedAndroidTest
+          command: |
+          sudo chmod +x gradlew
+          ./gradlew connectedAndroidTest
       - store_artifacts:
           path: app/build/reports
           destination: reports
